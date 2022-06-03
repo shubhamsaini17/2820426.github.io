@@ -1,0 +1,31 @@
+html
+
+<section>
+    <textarea placeholder="Enter Your Text" id="user_text" cols="30" rows="5" style="margin-left: -10px;"></textarea>
+    <br>
+    <input type="text" placeholder="What You Want To Search..." id="search" style="width: 307px;margin-left: -10px;">
+    <br>
+    <button type="submit" onclick="handle_search()">Search</button>
+    <span style="color: 
+#b5e853;" id="output"></span>
+</section>
+
+java
+
+<script>
+    let user_text = document.getElementById('user_text')
+    let search_query = document.getElementById('search')
+    let output = document.getElementById('output')
+    const handle_search = () => {
+        if(user_text.value.length > 0 && search_query.value.length > 0){
+            let regex_query = new RegExp(search_query.value, "ig");
+            if(regex_query.test(user_text.value)){
+                output.innerHTML = "Exist"
+            }else{
+                output.innerHTML = "Not Exist"
+            }
+        }else{
+            return false
+        }
+    }
+</script>
