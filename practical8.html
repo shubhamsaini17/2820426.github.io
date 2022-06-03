@@ -1,0 +1,39 @@
+javascript
+
+// check the console for output
+
+<script>
+    // for loop
+    const students = ["yash", "ajay", "dev"]
+    let output = ""
+    for (let i = 0; i < students.length; i++) {
+        output += students[i] + ' '
+    }
+    console.log('For Loop Output' + '\n' + output)
+
+    // for/in loop
+    output = ""
+    for (let student in students) {
+        output += students[student] + " ";
+    }
+    console.log('for/in Loop Output' + '\n' + output)
+
+    // while loop
+    output = ""
+    let i = 0
+    while (i < students.length) {
+        output += students[i] + " ";
+        i++;
+    }
+    console.log('While Loop Output' + '\n' + output)
+
+    // do loop
+    output = ""
+    i = 0
+    do {
+        output += students[i] + " ";
+        i++;
+    }
+    while (i < students.length);
+    console.log('Do While Loop Output' + '\n' + output)
+</script>
