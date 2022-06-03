@@ -1,0 +1,27 @@
+<section>
+    <label for="name">Enter Your Text</label>
+    <br />
+    <textarea
+    id="user_text"
+    placeholder="Enter text"
+    rows="5"
+    cols="50"
+    ></textarea>
+    <br />
+    <button onclick="getUppercase()">UpperCase</button>
+    <button onclick="getLowercase()">LowerCase</button>
+    <button onclick="clear_userinput()">Clear</button>
+</section>
+<script>
+    const getUppercase = () => {
+    let user_text = document.getElementById('user_text')
+    user_text.value = user_text.value.toUpperCase()
+    }
+    const getLowercase = () => {
+    let user_text = document.getElementById('user_text')
+    user_text.value = user_text.value.toLowerCase()
+    }
+    const clear_userinput = () => {
+    document.getElementById('user_text').value = ''
+    }
+</script>
