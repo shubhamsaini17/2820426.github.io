@@ -1,0 +1,100 @@
+html
+
+<div class="ticker-wrap">
+    <div class="ticker">
+        <div class="ticker__item">Tickertape Example</div>
+        <div class="ticker__item">
+        Count -> <span id="count">1</span>
+        </div>
+    </div>
+</div>
+
+
+css
+
+* {
+box-sizing: border-box;
+}
+
+@-webkit-keyframes ticker {
+0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+
+100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+}
+
+@keyframes ticker {
+0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+
+100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+}
+
+.ticker-wrap {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 4rem;
+    background-color: rgba(
+#000, 0.9);
+    padding-left: 100%;
+    box-sizing: content-box;
+}
+
+.ticker {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 10s; /* change according to your use */
+}
+
+.ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: rgba(237, 192, 171);
+}
+
+body {
+    padding-bottom: 5rem;
+}
+h1,
+h2,
+p {
+    padding: 0 5%;
+}
+
+
+javascript
+
+
+<script>
+    let count = document.getElementById('count')
+    let current_count = localStorage.getItem('count')
+    if(current_count > 0){
+        count.innerHTML = current_count
+        localStorage.setItem('count', parseInt(current_count) + 1)
+    }else{
+        localStorage.setItem('count', 1)
+        count.innerHTML = 1
+    }
+</script>
