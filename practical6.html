@@ -1,0 +1,98 @@
+html
+
+
+
+<form name="register_form" onsubmit="return false">
+    <label for="name">Full Name</label>
+    <br />
+    <input type="text" id="name" placeholder="Full Name" autocomplete="off" />
+    <br />
+    <span class="error">
+        <p id="name_error"></p>
+    </span>
+    <br />
+    <label for="email">Email :</label>
+    <br />
+    <input type="email" id="email" placeholder="Email" autocomplete="off" />
+    <br />
+    <span class="error">
+        <p id="email_error"></p>
+    </span>
+    <br />
+    <label for="telephone">Telephone/Mobile :</label>
+    <br />
+    <input type="tel" id="telephone" placeholder="Telephone/Mobile" autocomplete="off" />
+    <br />
+    <span class="error">
+        <p id="telephone_error"></p>
+    </span>
+    <br />
+    <label for="gender">Gender :</label>
+    <br />
+    <input type="radio" name="gender" value="male" /> Male
+    <input type="radio" name="gender" value="female" /> Female
+    <br />
+    <span class="error">
+        <p id="gender_error"></p>
+    </span>
+    <br />
+    <label for="password">Password :</label>
+    <br />
+    <input type="password" id="password" placeholder="Password" autocomplete="off" />
+    <br />
+    <span class="error">
+        <p id="password_error"></p>
+    </span>
+    <br />
+    <button type="submit" onclick="validate_form()">Submit</button>
+</form>
+
+
+
+javascript
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function isNumeric(value) {
+        return /^-?\d+$/.test(value);
+    }
+    const validate_form = () => {
+        let names = ["name", "email", "telephone", "gender", "password"];
+        names.forEach(function (element) {
+                    document.getElementById(element + "_error").textContent = "";
+        });
+        let errorCount = 0;
+        names.forEach(function (element) {
+            if (element === "telephone") {
+                let val = document.forms["register_form"][element].value;
+                if(!isNumeric(val)){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be in number"; ++errorCount
+                }
+                if(val.length !== 10){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be 10 digit"; ++errorCount
+                }
+            }else if(element === "password"){
+                let val = document.forms["register_form"][element].value;
+                if(val.length <= 8){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be greater than 8 characters"; ++errorCount
+                }
+            } else {
+                let val = document.forms["register_form"][element].value;
+                if (val === null || val === "") {
+                    document.getElementById(element + "_error").textContent =
+                        element.toUpperCase().replace("_", " ") + " must be filled out";
+                        ++errorCount;
+                }
+            }
+        });
+        if(errorCount){
+            return false
+        }else{
+            swal("Submitted SuccessFully!", "Your form successfully submitted!", "success")
+            document.forms["register_form"].reset();
+        }
+    };
+</script>
+
+
