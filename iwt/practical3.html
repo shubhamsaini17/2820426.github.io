@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+body {background-image:url("https://images.pexels.com/photos/960137/pexels-photo-960137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); color:white;}
+section {border : pink solid thin; font-size:30px;}
+button {font-size:15px; font-weight: bold; border: black solid 5px; background-color:white; padding:10px; border-radius:15px; }
+</style>
+</head>
+<body>
+<section>
+<H1> My Hobbies </H1>
+<button type="button"> Video Games </button> <br>
+<button type="button"> Cycling </button><br>
+<button type="button"> Basket Ball </button><br>
+<button type="button"> Reading </button><br>
+
+<button type="button"> Learning a new language </button><br>   
+</section>
+<section>
+<p id="mid"> </p>
+</section>
+<section>
+  <p> This is the last section which load the middle section</p>
+<button type="button" onclick="midle()"> Load Middle Section </button>
+  </section>
+<section>
+<script>
+function midle()
+{
+document.getElementById("mid").innerHTML="This is the middle section";
+document.getElementById("mid").style.color='white';
+document.getElementById("mid").style.fontSize='50px';
+}
+</script>
+</section>
+</body>
+</html>
