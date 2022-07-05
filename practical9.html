@@ -1,25 +1,35 @@
-java
-
-// check the console for output
-
+<html>
+<head>
+<style>
+body {background-image:url("https://images.pexels.com/photos/750225/pexels-photo-750225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); color:gold; font-size:30px;text-align:center}
+</style>
+</head>
+<body>
+<h2 align="center"> Program for Copying, passing, and comparing by value and reference</h2>
+<br><br><br>
 <script>
-    // Copying, passing, and comparing by value
-    let x = 50
-    let y = x
-    x = 40
-    console.log('Copying, passing, and comparing by value Output: ' + y)
 
-    // Copying, passing, and comparing by reference
-    x = {name: "pratham"}
-    y = x
-    x.name = "yash"
-    console.log('Copying, passing, and comparing by reference Output: ' + y.name)
+// Copying, passing, and comparing by value
+let x = 60
+let y = x
+x = 30
+document.write('Copying, passing, and comparing by value Output: ' + y)
 
-    // References themselves are passed by value
-    let count = 0
-    const increase_count = (count) => {
-        count++
-    }
-    increase_count(count)
-    console.log('References themselves are passed by value Output: ' + count)
+// Copying, passing, and comparing by reference
+x = {name: "shubham"}
+y = x
+x.name = "Madanlal"
+document.write('<br>Copying, passing, and comparing by reference Output: ' + y.name)
+
+// References themselves are passed by value
+let count = 0
+const increase_count = (count) => {
+count++
+}
+
+
+increase_count(count)
+document.write('<br>References themselves are passed by value Output: ' + count)
 </script>
+</body>
+</html>
