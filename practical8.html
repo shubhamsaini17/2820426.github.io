@@ -1,39 +1,57 @@
-javascript
-
-// check the console for output
-
+<html>
+<head>
+<style>
+body {background-image: url("https://images.pexels.com/photos/813269/pexels-photo-813269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); color:white; font-size:20px;}
+button {font-size:15px; font-weight: bold; border: lime solid 3px; background-color:white; padding:10px; border-radius:15px; }
+</style>
+</head>
+<body>
+<h1 align=center> Javascript Loops </h1>
+<button type="button" onclick="forloop()"> For loop </button>
+<button type="button" onclick="forinloop()"> For in loop </button>
+<button type="button" onclick="whileloop()"> While loop </button>
+<button type="button" onclick="dowhileloop()"> Do While loop </button>
+<p id="demo"> </p>
+<p id="demo1"> </p>
+<p id="demo2"> </p>
+<p id="demo3"> </p>
 <script>
-    // for loop
-    const students = ["yash", "ajay", "dev"]
-    let output = ""
-    for (let i = 0; i < students.length; i++) {
-        output += students[i] + ' '
-    }
-    console.log('For Loop Output' + '\n' + output)
+const mobiles = ["Amobiles", "MI", "SAMSUNG", "VIVO"];
+function forloop()
+{
+let i, text=" ";
+for (i = 0; i < mobiles.length; i++) 
+  text += mobiles[i] + "<br>";
+document.getElementById("demo").innerHTML = text;
+}
+function forinloop()
+{
+let text = "";
+for (let x in mobiles) 
+  text += mobiles[x] + "<br>"; 
+document.getElementById("demo1").innerHTML = text;
+}
+function whileloop()
+{
+let i=0, text=" ";
+while (i < mobiles.length) 
+{
+text += mobiles[i] + "<br>";
+i++;
+}
+document.getElementById("demo2").innerHTML = text;
 
-    // for/in loop
-    output = ""
-    for (let student in students) {
-        output += students[student] + " ";
-    }
-    console.log('for/in Loop Output' + '\n' + output)
-
-    // while loop
-    output = ""
-    let i = 0
-    while (i < students.length) {
-        output += students[i] + " ";
-        i++;
-    }
-    console.log('While Loop Output' + '\n' + output)
-
-    // do loop
-    output = ""
-    i = 0
-    do {
-        output += students[i] + " ";
-        i++;
-    }
-    while (i < students.length);
-    console.log('Do While Loop Output' + '\n' + output)
+}
+function dowhileloop()
+{
+let i=0, text=" ";
+do
+{
+text += mobiles[i] + "<br>";
+i++;
+}while (i < mobiles.length) ;
+document.getElementById("demo3").innerHTML = text;
+}
 </script>
+</body>
+</html>
