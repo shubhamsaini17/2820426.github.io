@@ -1,40 +1,57 @@
 <html>
 <head>
 <style>
-
-body  {color:Blue; font-size:20px; }
-body  {background-image: url("https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-a:hover {text-decoration: none;}
-button {font-size:20px; font-weight: bold; border: lightblue solid 5px; background-color:white; padding:10px; border-radius:15px; }
+body {background-image: url("https://images.pexels.com/photos/813269/pexels-photo-813269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); color:white; font-size:20px;}
+button {font-size:15px; font-weight: bold; border: lime solid 3px; background-color:white; padding:10px; border-radius:15px; }
 </style>
 </head>
 <body>
-<p>Use Cascading Style sheets (CSS) to modify the following:<br>
-(a) Change background.<br>
-(b) Change font type, face and color.<br>
-(c) Align Text.<br>
-(d) Remove underlines from hyperlinks.</p>
- <section>
-    <button type="button" onclick="background()">Change Background Color</button>
-    <button type="button" onclick="font()">Change Font attributes</button>
-    <button type="button" onclick="align()">Align Text Center</button>
-    <button type="button" ><a href = "#">Remove Underline</a></button>
-</section>
+<h1 align=center> Javascript Loops </h1>
+<button type="button" onclick="forloop()"> For loop </button>
+<button type="button" onclick="forinloop()"> For in loop </button>
+<button type="button" onclick="whileloop()"> While loop </button>
+<button type="button" onclick="dowhileloop()"> Do While loop </button>
+<p id="demo"> </p>
+<p id="demo1"> </p>
+<p id="demo2"> </p>
+<p id="demo3"> </p>
 <script>
-    function background() 
-   {
-        document.body.style.backgroundColor = "red";
-    }
-    function font() 
-   {
-         document.body.style.fontSize = "40px";
-         document.body.style.color = "yellow";
-         document.body.style.fontFamily = "Monotype Corsiva";
-    }
-    function align() {
-         document.body.style.textAlign = "center";
-    }
-    
+const mobiles = ["Amobiles", "MI", "SAMSUNG", "VIVO"];
+function forloop()
+{
+let i, text=" ";
+for (i = 0; i < mobiles.length; i++) 
+  text += mobiles[i] + "<br>";
+document.getElementById("demo").innerHTML = text;
+}
+function forinloop()
+{
+let text = "";
+for (let x in mobiles) 
+  text += mobiles[x] + "<br>"; 
+document.getElementById("demo1").innerHTML = text;
+}
+function whileloop()
+{
+let i=0, text=" ";
+while (i < mobiles.length) 
+{
+text += mobiles[i] + "<br>";
+i++;
+}
+document.getElementById("demo2").innerHTML = text;
+
+}
+function dowhileloop()
+{
+let i=0, text=" ";
+do
+{
+text += mobiles[i] + "<br>";
+i++;
+}while (i < mobiles.length) ;
+document.getElementById("demo3").innerHTML = text;
+}
 </script>
 </body>
 </html>
