@@ -1,100 +1,91 @@
-html
-
-<div class="ticker-wrap">
-    <div class="ticker">
-        <div class="ticker__item">Tickertape Example</div>
-        <div class="ticker__item">
-        Count -> <span id="count">1</span>
-        </div>
-    </div>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head>
+<body background="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjQ3NS1rYXRpZS0xMDEtYWJzdHJhY3RibGFja2FuZHdoaXRlYmdfMS5qcGc.jpg"><div class="ticker-wrap">
+<div class="ticker">
+<div class="ticker__item">Ticker-tape !!</div>
+<div class="ticker__item">
+Count -&gt; <span id="count">9</span>
 </div>
-
-
-css
-
-* {
-box-sizing: border-box;
-}
+</div>
+</div>
+<style>
 
 @-webkit-keyframes ticker {
 0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+visibility: visible;
 }
 
 100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-}
+-webkit-transform: translate3d(-100%, 0, 0);
+transform: translate3d(-100%, 0, 0); 24 }
 }
 
 @keyframes ticker {
 0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+visibility: visible;
 }
 
+
 100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-}
+-webkit-transform: translate3d(-100%, 0, 0);
+transform: translate3d(-100%, 0, 0); 37 }
 }
 
 .ticker-wrap {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    height: 4rem;
-    background-color: rgba(
+position: fixed;
+bottom: 0;
+width: 100%;
+overflow: hidden;
+height: 4rem;
+background-color: rgb(7, 67, 67) (
 #000, 0.9);
-    padding-left: 100%;
-    box-sizing: content-box;
+padding-left: 100%;
+box-sizing: content-box;
 }
 
 .ticker {
-    display: inline-block;
-    height: 4rem;
-    line-height: 4rem;
-    white-space: nowrap;
-    padding-right: 100%;
-    box-sizing: content-box;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-name: ticker;
-    animation-duration: 10s; /* change according to your use */
+display: inline-block;
+height: 4rem;
+line-height: 4rem;
+white-space: nowrap;
+padding-right: 100%;
+box-sizing: content-box;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-name: ticker;
+animation-duration: 7s; /* Adjustable */
 }
 
 .ticker__item {
-    display: inline-block;
-    padding: 0 2rem;
-    font-size: 2rem;
-    color: rgba(237, 192, 171);
+display: inline-block;
+padding: 0 2rem;
+font-size: 2rem;
+color: rgb(171, 179, 237);
 }
 
 body {
-    padding-bottom: 5rem;
+padding-bottom: 5rem;
 }
 h1,
 h2,
 p {
-    padding: 0 5%;
+padding: 0 5%;
 }
-
-
-javascript
-
-
+</style>
 <script>
-    let count = document.getElementById('count')
-    let current_count = localStorage.getItem('count')
-    if(current_count > 0){
-        count.innerHTML = current_count
-        localStorage.setItem('count', parseInt(current_count) + 1)
-    }else{
-        localStorage.setItem('count', 1)
-        count.innerHTML = 1
-    }
+let count = document.getElementById('count')
+let current_count = localStorage.getItem('count')
+if(current_count > 0){
+count.innerHTML = current_count
+localStorage.setItem('count', parseInt(current_count) + 1)
+}else{
+localStorage.setItem('count', 1)
+count.innerHTML = 1
+}
 </script>
+</body></html>
