@@ -1,30 +1,40 @@
-html
+<html>
+<head>
+<style>
 
-
-<section>
-    <button type="button" onclick="change_bg()">Change Background Color</button>
-    <button type="button" onclick="change_font_size()">Change Font Size</button>
-    <button type="button" onclick="change_font_color()">Change Color</button>
-    <button type="button" onclick="change_align_center()">Align Text Center</button>
-    <a onclick="remove_underline()">Remove Underlines</a>
+body  {color:Blue; font-size:20px; }
+body  {background-image: url("https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+a:hover {text-decoration: none;}
+button {font-size:20px; font-weight: bold; border: lightblue solid 5px; background-color:white; padding:10px; border-radius:15px; }
+</style>
+</head>
+<body>
+<p>Use Cascading Style sheets (CSS) to modify the following:<br>
+(a) Change background.<br>
+(b) Change font type, face and color.<br>
+(c) Align Text.<br>
+(d) Remove underlines from hyperlinks.</p>
+ <section>
+    <button type="button" onclick="background()">Change Background Color</button>
+    <button type="button" onclick="font()">Change Font attributes</button>
+    <button type="button" onclick="align()">Align Text Center</button>
+    <button type="button" ><a href = "#">Remove Underline</a></button>
 </section>
-
-javascript
-
 <script>
-    const change_bg = () => {
-        document.getElementById('main').style.backgroundColor = "#2d2d2d"
+    function background() 
+   {
+        document.body.style.backgroundColor = "red";
     }
-    const change_font_size = () => {
-        document.getElementById('main').style.fontSize = "30px"
+    function font() 
+   {
+         document.body.style.fontSize = "40px";
+         document.body.style.color = "yellow";
+         document.body.style.fontFamily = "Monotype Corsiva";
     }
-    const change_font_color = () => {
-        document.querySelectorAll("button").forEach(button => button.style.color = "#b5e853");
+    function align() {
+         document.body.style.textAlign = "center";
     }
-    const change_align_center = () => {
-        document.getElementById('main').style.textAlign = "center"
-    }
-    const remove_underline = () => {
-        document.querySelector('a').style.setProperty('border-bottom', 'none', 'important');
-    }
+    
 </script>
+</body>
+</html>
